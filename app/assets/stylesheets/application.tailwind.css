@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.social-post-text-area {
+    background-color: rgb(240 253 250);
+}
+
+.social-post-text-area:active {
+    outline: none !important;
+}
+
+.social-post-text-area:focus {
+    outline: none !important;
+}

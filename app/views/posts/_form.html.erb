@@ -12,21 +12,30 @@
   <% end %>
 
   <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <!-- <%= form.label :content, style: "display: block" %> -->
+    <%= form.text_area :content, class: "text-slate-800 w-full h-48 text-xl px-2 mb-2 social-post-text-area", placeholder: "Type here to compose a new post..." %>
   </div>
+  
+  <!-- border-md bg-white active:border-solid active:border-teal-300 active:border-4 focus:border-solid focus:border-teal-300 focus:border-4 -->
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
+    <%= form.label :user_id, style: "display: none" %>
+    <%= form.number_field :user_id, style: "display: none" %>
   </div>
 
-  <div>
-    <%= form.label :schedule_time, style: "display: block" %>
-    <%= form.datetime_field :schedule_time %>
+  <div class="px-2">
+    <!-- <%= form.label :schedule_time, style: "display: block" %> -->
+    <%= form.datetime_field :schedule_time, class: "" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="w-full px-2 mt-3 flex flex-row justify-between">
+    <div class="flex flex-row justify-center items-center">
+      <i class="text-4xl mr-5 text-teal-900 fa-brands fa-facebook hover:cursor-pointer hover:text-teal-500"></i>
+      <i class="text-4xl mr-5 text-teal-900 fa-brands fa-twitter hover:cursor-pointer hover:text-teal-500"></i>
+      <i class="text-4xl mr-5 text-teal-900 fa-brands fa-instagram hover:cursor-pointer hover:text-teal-500"></i>
+
+    </div>
+    <%= form.submit 'Add to Queue',  class: "text-lg font-semibold text-white w-1/4 p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer " %>
   </div>
 <% end %>
+
