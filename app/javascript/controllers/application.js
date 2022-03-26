@@ -6,7 +6,4 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
-import { Dropdown } from "tailwindcss-stimulus-components"
-application.register('dropdown', Dropdown)
-
 export { application }
