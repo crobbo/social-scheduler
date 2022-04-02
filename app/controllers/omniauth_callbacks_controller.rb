@@ -1,6 +1,10 @@
 class OmniauthCallbacksController < ApplicationController
     def twitter
+
+        Rails.logger.info auth
+
         twitter_account = current_user.twitter_accounts.where(username: auth.info.nickname).first_or_initialize
+
         twitter_account.update(
             name: auth.info.name,
             username: auth.info.nickname,
