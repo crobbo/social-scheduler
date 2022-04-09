@@ -1,0 +1,8 @@
+<h1>Twiter Accounts</h1>
+
+<% @twitter_accounts.each do |twitter_account| %>
+    <div>
+        <%= twitter_account.username %>
+        <%= image_tag twitter_account.image, class: "h-10 w-10 rounded-full" %>
+    </div>
+<% end %>

@@ -1,5 +1,9 @@
-<h1 class="pl-2 pb-2 mb-2 text-3xl text-slate-800 border-b-2 border-slate-200 font-semibold">📝New post</h1>
+<div class="mt-20 w-1/2 p-4 bg-teal-50 shadow-lg drop-shadow-2xl">
+    <h1 class="pl-2 pb-2 mb-2 text-3xl text-slate-800 border-b-2 border-slate-200 font-semibold">New Post</h1>
 
-<%= render "form", post: @post %>
+    <%= render "form", post: @post %>
 
-<%= button_to "Connect Twitter", "/auth/twitter", method: :post, :data => {turbo: "false"} %>
+    <%= button_to "Connect Twitter", "/auth/twitter", method: :post, :data => {turbo: "false"} %>
+</div>  
+
+

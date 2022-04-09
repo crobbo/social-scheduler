@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
+
+  resources :twitter_accounts
+
+  resources :social_accounts, only: [:index]
+
+  
   root "posts#new"
 end
