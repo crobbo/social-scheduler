@@ -1,15 +1,5 @@
 <%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <% render 'shared/form_errors', form: form %>
 
   <div>
     <!-- <%= form.label :content, style: "display: block" %> -->
@@ -19,8 +9,9 @@
   <!-- border-md bg-white active:border-solid active:border-teal-300 active:border-4 focus:border-solid focus:border-teal-300 focus:border-4 -->
 
   <div>
-    <!-- <%= form.number_field :user_id, :value => current_user.id%> -->
-    <%= form.hidden_field :user_id, :value => current_user.id %>
+    <!-- <%= form.hidden_field :user_id, :value => current_user.id %> -->
+    <%= form.collection_select :twitter_account_id, current_user.twitter_accounts, :id, :username, {}, {class: ""} %>
+    <%= form.hidden_field :twitter_account_id, :value => current_user.twitter_accounts.first.id %>
   </div>
 
   <div class="px-2">
@@ -35,7 +26,6 @@
       <i class="text-4xl mr-5 text-teal-900 fa-brands fa-instagram hover:cursor-pointer hover:text-teal-500"></i>
 
     </div>
-    <%= form.submit 'Add to Queue',  class: "text-lg font-semibold text-white w-1/4 p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer " %>
+    <%= form.submit 'Add to Queue',  class: "text-lg font-semibold text-white w-1/4 p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer" %>
   </div>
 <% end %>
-
