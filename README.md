@@ -1,3 +1,3 @@
 # Social Scheduler
 
-A social media scheduling app built with Rails 7. 
+A social media scheduling app built with Rails 7, StimulusJS & TailwindCSS. 
