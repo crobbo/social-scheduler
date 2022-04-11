@@ -1,2 +1,20 @@
-This is a test page.
-<%= @social_accounts[0].username %>
+<div class="px-20 text-slate-700">
+    <h1 class="font-bold text-3xl mb-10">Connected Accounts</h1>
+    <div class="w-full flex items-center">
+        <div class="w-1/2">
+            <% if @twitter_accounts.any? %> 
+                 <% @twitter_accounts.each do |account| %>
+                     <div class="flex items-center">
+                         <%= link_to "@#{account.username}", "https://twitter.com/#{account.username}", class: "text-2xl font-semibold text-slate-800 mr-5" %>
+                         <%= button_to "Disconnect", "/social_accounts/#{account.id}", method: :delete, class: "text-lg font-semibold text-white w-full p-3 rounded-md bg-red-300 hover:bg-red-400 hover:cursor-pointer", data: { confirm: "Are you sure?" } %>
+                     </div>
+                 <% end %>   
+            <% else %>
+                 <p class="text-left">You don't have any connected accounts.</p>
+            <% end %>
+         </div>
+         <div div class="w-1/2 flex justify-center ">
+             <%= button_to "Connect Twitter", "/auth/twitter", method: :post, :data => {turbo: "false"}, class: "w-full text-lg font-semibold text-white w-full p-3 rounded-md bg-green-300 hover:bg-green-400 hover:cursor-pointer" %>
+         </div>
+    </div>
+</div>

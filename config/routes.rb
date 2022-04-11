@@ -13,8 +13,7 @@ Rails.application.routes.draw do
 
   resources :twitter_accounts
 
-  resources :social_accounts, only: [:index]
-
+  resources :social_accounts, only: [:index, :destroy]
   
   root "posts#new"
 end

@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_01_165107) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_10_093143) do
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
     t.datetime "schedule_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tweet_id"
+    t.integer "twitter_account_id"
   end
 
   create_table "twitter_accounts", force: :cascade do |t|
