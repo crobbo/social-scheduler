@@ -8,6 +8,12 @@ class Post < ApplicationRecord
     after_initialize do
         self.schedule_time ||= Time.now + 24.hours
     end
+
+    after_save_commit do
+        if schedule_time_previously_changed?
+        TweetJob.set(wait_until: schedule_time).perform_later(self)
+        end
+    end
     
     def published?
         tweet_id?
