@@ -2,9 +2,11 @@ class TweetJob < ApplicationJob
   queue_as :default
 
   def perform(tweet)
-    # Do something later
     return if tweet.published?
-    
+
+    return if tweet.schedule_time > Time.current
+
     tweet.publish_to_twitter!
   end
 end
+  
