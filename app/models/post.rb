@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     validates :schedule_time, presence: true
 
     after_initialize do
-        self.schedule_time ||= Time.now + 24.hours
+        self.schedule_time ||= Time.now
     end
 
     after_save_commit do
