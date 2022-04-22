@@ -58,6 +58,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def new_if_logged_in?
+    if user_signed_in?
+      redirect_to new_post_path
+    else
+      redirect_to new_user_session_path
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

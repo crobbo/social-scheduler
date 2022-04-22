@@ -14,6 +14,5 @@ Rails.application.routes.draw do
   resources :twitter_accounts
 
   resources :social_accounts, only: [:index, :destroy]
-  
-  root "posts#new"
+  root "posts#new_if_logged_in?"
 end
