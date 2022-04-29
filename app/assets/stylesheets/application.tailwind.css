@@ -17,3 +17,7 @@
 .border-1 {
     border-width: 1px;
 }
+
+.bg-blue-1000 {
+    background-color: blue;
+}
