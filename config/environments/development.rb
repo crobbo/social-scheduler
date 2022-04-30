@@ -2,7 +2,6 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -72,4 +71,6 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.active_job.queue_adapter = :sidekiq
+
+  config.serve_static_assets = false
 end

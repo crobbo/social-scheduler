@@ -2,7 +2,7 @@
   "name": "app",
   "private": "true",
   "dependencies": {
-    "autoprefixer": "^10.4.4",
+    "autoprefixer": "^10.4.5",
     "el-transition": "^0.0.7",
     "postcss": "^8.4.12",
     "tailwindcss-stimulus-components": "^3.0.4"
