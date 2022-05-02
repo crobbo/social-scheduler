@@ -52,22 +52,17 @@ table {
 @tailwind components;
 @tailwind utilities;
 
-.social-post-text-area {
-    background-color: rgb(240 253 250);
-}
 
-.social-post-text-area:active {
-    outline: none !important;
-}
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
 
-.social-post-text-area:focus {
-    outline: none !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 .border-1 {
     border-width: 1px;
-}
-
-.bg-blue-1000 {
-    background-color: blue;
 }
