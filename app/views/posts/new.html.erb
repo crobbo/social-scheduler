@@ -1,9 +1,11 @@
-<div class="flex flex-row justify-center">
+<div class="px-5  md:px-20 text-slate-700">
+    <h1 class="font-bold text-3xl mb-10">Schedule a post </h1>
+    
+</div>
+<div class="flex flex-row justify-center md:mt-24">
     <% if current_user && current_user.twitter_accounts.length >= 1 %>
-        <div class="mt-20 w-1/2 p-4 bg-teal-50 shadow-lg drop-shadow-2xl">
-            <h1 class="pl-2 pb-2 mb-2 text-3xl text-slate-700 border-b-2 border-slate-200 font-semibold">New Post</h1>
-            
-                <%= render "form", post: @post %>
+        <div class="w-full max-w-lg md:max-w-xl mx-10 py-4 px-8 bg-white shadow-lg rounded-lg ">
+            <%= render "form", post: @post %>
         </div>
     <% elsif current_user %>
         <div class="mt-20 w-1/2 p-4 bg-red-400 shadow-lg drop-shadow-2xl">

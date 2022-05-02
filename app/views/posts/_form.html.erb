@@ -1,31 +1,36 @@
 <%= form_with(model: post) do |form| %>
   <% render 'shared/form_errors', form: form %>
-
   <div>
-    <!-- <%= form.label :content, style: "display: block" %> -->
-    <%= form.text_area :content, class: "text-slate-800 w-full h-48 text-xl px-2 mb-2 social-post-text-area", placeholder: "Type here to compose a new post..." %>
+    <%= form.text_area :content, class: "text-slate-800 w-full h-48 text-xl px-2 mb-2 bg-white py-5", placeholder: "Today is a good day!" %>
   </div>
-  
-  <!-- border-md bg-white active:border-solid active:border-teal-300 active:border-4 focus:border-solid focus:border-teal-300 focus:border-4 -->
-
-  <div>
-    <!-- <%= form.hidden_field :user_id, :value => current_user.id %> -->
-    <%= form.collection_select :twitter_account_id, current_user.twitter_accounts, :id, :username, {}, {class: ""} %>
-    <%= form.hidden_field :twitter_account_id, :value => current_user.twitter_accounts.first.id %>
-  </div>
-
-  <div class="px-2">
-    <!-- <%= form.label :schedule_time, style: "display: block" %> -->
-    <%= form.datetime_field :schedule_time, class: "" %>
-  </div>
-
-  <div class="w-full px-2 mt-3 flex flex-row justify-between">
-    <div class="flex flex-row justify-center items-center">
-      <i class="text-4xl mr-5 text-teal-900 fa-brands fa-facebook hover:cursor-pointer hover:text-teal-500"></i>
-      <i class="text-4xl mr-5 text-teal-900 fa-brands fa-twitter hover:cursor-pointer hover:text-teal-500"></i>
-      <i class="text-4xl mr-5 text-teal-900 fa-brands fa-instagram hover:cursor-pointer hover:text-teal-500"></i>
-
+  <div class="w-full px-2 mt-3 flex flex-row justify-start lg:justify-end">
+    <div class="flex flex-col w-1/2">
+          <div>
+              <%= form.datetime_field :schedule_time, class: "text-sm md:text-base" %>
+          </div>
+          <div class="text-sm md:text-sm lg:text-base md:mt-1">
+              <%=link_to "@#{current_user.twitter_accounts.first.username}", social_accounts_path, class:"sm:block text-base md:flex md:text-xl font-medium text-pink-500" %>
+              <%= form.hidden_field :twitter_account_id, :value => current_user.twitter_accounts.first.id %>
+          </div>
     </div>
-    <%= form.submit 'Add to Queue', class: "text-lg font-semibold text-white w-1/4 p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer" %>
+    <div class="hidden lg:flex lg:justify-end lg:ml-5 lg:w-1/2">
+         <div class="lg:w-2/3">
+          <%= form.submit 'Schedule Post', class: "whitespace-normal text-sm md:text-base lg:text-lg font-semibold text-white w-full p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer" %>         
+         </div>
+     </div>
+
+     
   </div>
+  <div class="flex flex-row justify-end  lg:hidden mt-2 lg:mt-0">
+          <div class="w-1/2">
+                <%= form.submit 'Schedule Post', class: "whitespace-normal text-sm md:text-base lg:text-lg font-semibold text-white w-full p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer" %>   
+          </div>
+    </div>
 <% end %>
+
+<%# <div class="flex flex-row justify-center items-center">
+  <i class="text-4xl mr-5 text-teal-900 fa-brands fa-facebook hover:cursor-pointer hover:text-teal-500"></i>
+  <i class="text-4xl mr-5 text-teal-900 fa-brands fa-twitter hover:cursor-pointer hover:text-teal-500"></i>
+  <i class="text-4xl mr-5 text-teal-900 fa-brands fa-instagram hover:cursor-pointer hover:text-teal-500"></i>
+
+</div> %>

@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>SocialScheduler</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application.css", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
-  <body class="bg-slate-50 ">
-
       <!-- Notifications  -->
     <% if flash[:notice] %>
       <div class="fixed inset-x-0 top-0 flex items-end justify-right px-4 py-6 sm:p-6 justify-end z-30 pointer-events-none">
@@ -33,7 +19,6 @@
             </div>
           </div>
         </div>
-      </div>
       <% end %>
 
     <% if flash[:alert] %>
@@ -58,20 +43,3 @@
         </div>
       </div>
       <% end %>
-         
-    <% if user_signed_in? %>
-      <div class="flex flex-row w-full">
-        <%= render "sidebar" %>
-        <div class="w-full md:w-5/6 md:h-screen overflow-hidden">
-            <%= render "navbar" %>   
-            <%= render "page-content"%>  
-        </div>
-      </div>  
-    <% else %>
-      <div class="w-full h-screen">
-        <%= render "navbar" %>   
-        <%= render "page-content" %>    
-      </div>
-    <% end %>
-  </body>
-</html>

@@ -25,11 +25,14 @@
          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirm password", class: "w-full h-10 my-5 p-2 border border-solid border-slate-700 rounded-sm" %>
        </div>
      
-       <div class="actions flex flex-row justify-end">
-         <%= f.submit "Sign up", class: "text-lg font-semibold text-white w-1/3 p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer" %>
+       <div class="actions flex flex-row justify-between">
+        <div>
+            <%= link_to "Sign In", new_user_session_path %>
+        </div>
+         <%= f.submit "Sign up", "data-turbo" => "false", class: "text-lg font-semibold text-white w-1/3 p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer" %>
        </div>
      <% end %>
-   </div>
+  </div>
 </div>
 
 
