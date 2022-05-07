@@ -4,6 +4,8 @@ A Twitter scheduling app built with Rails 7, StimulusJS & TailwindCSS. The app u
 
 Overall, this project furthered my Rails knowledge and was a good opportunity to learn new concepts such as job queing and frameworks like StimulusJS. 
 
-Test the app here - [Demo Link](https://social-scheduler-app.herokuapp.com/)
+## Test the app
+
+[Demo Link](https://social-scheduler-app.herokuapp.com/)
 
 ![image](https://user-images.githubusercontent.com/47796704/167247174-2c8c1e3f-00e6-40be-a545-4950efe0dd99.png)
