@@ -6,4 +6,4 @@ Overall, this project furthered my Rails knowledge and was a good opportunity to
 
 Test the app here - [Demo Link](https://social-scheduler-app.herokuapp.com/)
 
-![image](https://user-images.githubusercontent.com/47796704/167246127-c91dac7e-57dc-46b7-a30f-f34b2a55219f.png)
+![image](https://user-images.githubusercontent.com/47796704/167247174-2c8c1e3f-00e6-40be-a545-4950efe0dd99.png)
