@@ -1,16 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="menu"
 export default class extends Controller {
   static targets = ["mobileDropdown", "desktopDropdown", "link"]
 
-  static classes = ["active", "inactive"]
-
-  initialize(){
+  connect(){
     this.toggleMenuLinkClass(window.location.pathname)
-  }
-
-  connect() {
   }
 
   toggleDesktopDropdown() {
