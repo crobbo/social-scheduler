@@ -64,6 +64,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "social_scheduler_production"
 
+
   config.action_mailer.perform_caching = false
   
   ActionMailer::Base.smtp_settings = {
@@ -105,7 +106,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
    
   # In production, :host should be set to the actual host of your application.
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://social-scheduler-app.herokuapp.com/'}
 
   config.active_job.queue_adapter = :sidekiq
 end
