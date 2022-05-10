@@ -76,6 +76,7 @@ Rails.application.configure do
     :authentication => :plain,
     enable_starttls_auto: true
   }
+
   ActionMailer::Base.delivery_method = :smtp
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -106,7 +107,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
    
   # In production, :host should be set to the actual host of your application.
-  config.action_mailer.default_url_options = { :host => "social-scheduler-app.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "http://social-scheduler-app.herokuapp.com" }
 
   config.active_job.queue_adapter = :sidekiq
 end
