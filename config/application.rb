@@ -20,6 +20,6 @@ module SocialScheduler
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.action_mailer.default_url_options = { host: 'https://social-scheduler-app.herokuapp.com' }
-
+    
   end
 end
