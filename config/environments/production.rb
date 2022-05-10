@@ -73,6 +73,7 @@ Rails.application.configure do
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
     :domain         => 'social-scheduler-app.herokuapp.com',
     :authentication => :plain,
+    enable_starttls_auto: true
   }
   ActionMailer::Base.delivery_method = :smtp
 
