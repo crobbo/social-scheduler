@@ -72,7 +72,7 @@ Rails.application.configure do
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'social-scheduler-app.herokuapp.com',
+    :domain         => 'kindle.readstack.io',
     :authentication => :plain,
     :openssl_verify_mode  => 'none',
     enable_starttls_auto: true
