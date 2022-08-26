@@ -1,0 +1,39 @@
+<%= form_with(model: post, data: { controller: "tweet", tweet_character_count_value: 280 } ) do |form| %>
+  <% render 'shared/form_errors', form: form %>
+  <div>
+    <%= form.text_area :content, class: "text-slate-800 w-full h-48 text-xl px-2 mb-2 bg-white py-5", placeholder: "Today is a good day!", data: { tweet_target: "field", action: "keyup->tweet#change" } %>
+  </div>
+  <div class="px-2 ">
+    <span class="text-sm font-semibold text-slate-500" data-tweet-target="output"></span>
+    <span class="text-sm font-light text-slate-500">characters remaining</span>
+
+  </div>
+  <div class="w-full px-2 mt-3 flex flex-row justify-start lg:justify-end">
+    <div class="flex flex-col w-1/2">
+          <div>
+              <%= form.datetime_field :schedule_time, class: "text-sm md:text-base" %>
+          </div>
+          <div class="text-sm md:text-sm lg:text-base md:mt-1">
+              <%=link_to "@#{current_user.twitter_accounts.first.username}", social_accounts_path, class:"sm:block text-base md:flex md:text-xl font-medium text-pink-500" %>
+              <%= form.hidden_field :twitter_account_id, :value => current_user.twitter_accounts.first.id %>
+          </div>
+    </div>
+    <div class="hidden lg:flex lg:justify-end lg:ml-5 lg:w-1/2">
+         <div class="lg:w-2/3">
+          <%= form.submit 'Schedule Post', class: "whitespace-normal text-sm md:text-base lg:text-lg font-semibold text-white w-full p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer" %>         
+         </div>
+     </div>
+  </div>
+  <div class="flex flex-row justify-end  lg:hidden mt-2 lg:mt-0">
+          <div class="w-1/2">
+                <%= form.submit 'Schedule Post', class: "whitespace-normal text-sm md:text-base lg:text-lg font-semibold text-white w-full p-3 rounded-md bg-slate-800 hover:bg-slate-700 hover:cursor-pointer" %>   
+          </div>
+    </div>
+<% end %>
+
+<%# <div class="flex flex-row justify-center items-center">
+  <i class="text-4xl mr-5 text-teal-900 fa-brands fa-facebook hover:cursor-pointer hover:text-teal-500"></i>
+  <i class="text-4xl mr-5 text-teal-900 fa-brands fa-twitter hover:cursor-pointer hover:text-teal-500"></i>
+  <i class="text-4xl mr-5 text-teal-900 fa-brands fa-instagram hover:cursor-pointer hover:text-teal-500"></i>
+
+</div> %>
