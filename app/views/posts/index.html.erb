@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="px-5 md:px-20 text-3xl text-slate-700 text-left font-bold">Planner</h1>
+<p class="px-5 md:px-20 text-left mt-5">Edit or delete your scheduled posts.</p>
+
+<div class="flex flex-row justify-center w-full md:overflow-auto h-5/6 pt-7">
+  <div class="w-full flex flex-col items-center justify-start h-full" id="posts">
+    <% @posts.each do |post| %>
+
+     <% if !post.twitter_account.nil?%>
+        <div class="max-w-md md:max-w-lg py-4 px-8 bg-white shadow-lg rounded-lg my-10 w-full break-words">
+        <div class="flex justify-center md:justify-end -mt-8 w-full">
+            <%= image_tag post.twitter_account.image, class: "w-14 h-14 object-cover rounded-full border-2 border-indigo-500" %>
+        </div>
+        <div>
+            <p class="text-sm md:text-base font-light mt-2 text-slate-800"><%= post.content %></p>
+        </div>
+        <div class="flex justify-between mt-4">
+            <div>
+              <p><span class="text-sm md:text-base font-semibold text-cyan-600">Scheduled for </span> <span class="text-sm md:text-base"> <%= post.schedule_time %> </span> </p>
+              <%= link_to "Edit", edit_post_path(post), class:"text-sm md:text-base font-light text-slate-800 mr-1" %>
+              <%= link_to "Delete", post, method: :delete, class:"text-sm md:text-base font-light text-slate-800" %>
+            </div>
+            <%=link_to "@#{post.twitter_account.username}", social_accounts_path, class:"hidden sm:block text-base md:flex md:text-xl font-medium text-pink-500" %>
+        </div>
+    </div>
+     <% end %>
+    <% end %>
+  </div>
+</div>
